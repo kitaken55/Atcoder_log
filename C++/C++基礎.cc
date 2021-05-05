@@ -1,3 +1,63 @@
+/* 配列でも参照渡しが使われている
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void sqrt(int t[]);
+
+int main() {
+    int s[] = {10,20,30,40,50};
+
+    sqrt(s);
+
+    for(int i=0; i<5; i++) {
+        cout << s[i] <<" ";
+    }
+}
+
+void sqrt(int t[]) {
+    t[0] = 100;
+}
+
+*/
+
+/* 
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void sqrt(int* x, int* y);
+
+int main() {
+    int x = 10;
+    cout << &x << endl;
+
+    int* xPtr; //ポインタを代入するときは*をつける
+    xPtr = &x; //ｘのアドレス部分を代入
+
+    cout << xPtr << endl;
+    cout << *xPtr << endl; //値の部分を見たい場合は*をつけることで見れる
+    cout << &x << endl;
+
+    int y = 10;
+    int *yPtr=&y;
+    int *yPtr2; //初期化は「int*」でも「*変数名」でもできる
+
+    cout << *yPtr << endl;
+ 
+    sqrt(xPtr, yPtr); //参照渡し(通常は値渡し): 返り値を何かに代入しなくても、値が書き換わる！
+
+    cout << *yPtr << endl;
+}
+
+void sqrt(int* x, int* y) {
+    *y = *x * *x;
+}
+
+*/
+
 /* テンプレート(オーバーロードの応用)
 
 #include <iostream>
