@@ -1,3 +1,37 @@
+// 模範回答A サイコロは「ある面とその反対側の面が表す整数を足すと7になる」という性質を持ちます。
+// よって、nの目が出たとき、反対側の目は「7-n」である。
+#include <iostream>
+
+int main() {
+    int a, b, c;
+    std::cin >> a >> b >> c;
+    std::cout << 21 - (a + b + c) << '\n'; //21は7を3個分用意している
+    return 0;
+}
+
+// 模範回答B
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+int main() {
+    std::string S;
+    std::cin >> S;
+    std::reverse(S.begin(), S.end());
+    for (const auto c: S) {
+        if (c == '6') std::cout << '9';
+        else if (c == '9') std::cout << '6';
+        else std::cout << c;
+    }
+    std::cout << '\n';
+    return 0;
+}
+
+
+
+
+
+
 //B
 #include <bits/stdc++.h>
 using namespace std;
