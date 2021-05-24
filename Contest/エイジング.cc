@@ -9,7 +9,7 @@ int main() {
     return 0;
 }
 
-// 模範回答B
+// 模範回答B ほぼ同じ回答だが短いコードで書かれている&配列使っていない。
 #include <iostream>
 #include <string>
 #include <algorithm>
